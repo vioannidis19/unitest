@@ -1,3 +1,6 @@
+<?php
+
+?>
 <div class="sidebar">
     <div class="logo">
         Logo
