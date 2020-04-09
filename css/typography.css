@@ -1,0 +1,24 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/************ GENERAL ***********/
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--gray);
+}
+
+
+
+/************ SIDEBAR ***********/
+
+.logo {
+    font-weight: 500;
+    color: var(--light-blue);
+    font-size: 1.3em;
+}
