@@ -3,8 +3,9 @@
 ?>
 <div class="sidebar">
     <div class="logo">
-        Logo
-        <!--TODO Add logo image file -->
+        <a href="#">
+            <img src="img/logo.png" alt="">
+        </a>
     </div>
     <div class="navlist-container">
         <ul class="navlist">
@@ -32,10 +33,13 @@
     <div class="user-info">
         <!-- TODO PHP to show user info if logged in -->
         <div class="user-icon"></div>
-        <div class="user-name">Ευθύμιος Κελέσμητος</div>
+        <div class="user-name">
+            <a href="#">Ευθύμιος Κελέσμητος</a>
+        </div>
     </div>
     <div class="login-logout">
         <a href="#">Σύνδεση/Εγγραφή</a>
         <!-- TODO PHP to toggle between login or logout link -->
+        <i class="fas fa-sign-out-alt"></i>
     </div>
 </div>

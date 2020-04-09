@@ -1,0 +1,81 @@
+/********** WIDGET ***********/
+
+.widget {
+    display: inline-block;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 1px 1px 4px #ccc;
+}
+
+.widget-title {
+    margin: 15px 0;
+}
+
+
+/********** TABLE ***********/
+
+.grades-table {
+    width: 100%;
+    
+}
+
+.grades-table tr td {
+    padding: 9px 20px;
+}
+
+.grades-table tr:nth-child(odd){
+    background-color: var(--light-gray);
+    color: var(--light-blue);
+}
+
+.grades-table tr:nth-child(odd) a{
+    color: var(--light-blue);
+}
+
+.grades-table tr:nth-child(even) {
+    color: var(--gray);
+}
+
+.grades-table tr td:first-child {
+    text-align: left;
+}
+
+/******** BUTTONS ***********/
+
+.cta-button {
+    border: 0;
+    background-color: var(--light-blue);
+    color: white;
+    padding: 5px 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/*********** TEST ***********/
+
+.question-container {
+    color: var(--gray);
+    width: 85%;
+    margin: 0 auto;
+}
+
+.question-container .question-item {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.question-container .questions-list .answers-list {
+    
+}
+
+.question-container .questions-list .answers-list .answer-item{
+    list-style-type: lower-alpha;    
+    display: inline-block;
+}
+
+.question-container .questions-list .answers-list {
+    
+}
