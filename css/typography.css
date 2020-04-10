@@ -8,6 +8,10 @@ ul li {
     list-style-type: none;
 }
 
+ol {
+    padding: 0;
+}
+
 a {
     text-decoration: none;
     color: var(--gray);

@@ -63,19 +63,33 @@
 }
 
 .question-container .question-item {
-    margin: 10px 0;
+    padding: 20px 0;
     text-align: left;
 }
 
 .question-container .questions-list .answers-list {
-    
+    margin-top: 20px;
+}
+
+.question-container .questions-list .answers-list .answers-listgroup {
+    display: flex;
+    margin-bottom: 20px;
 }
 
 .question-container .questions-list .answers-list .answer-item{
     list-style-type: lower-alpha;    
-    display: inline-block;
+    overflow-wrap: break-word;
+    flex: 45%;
+    margin-left: 10px;
 }
 
-.question-container .questions-list .answers-list {
-    
+.question-container .submit-test-btn {
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--light-blue);
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
+

@@ -56,7 +56,6 @@
                 <input type="button" value="Περισσότερα" class="cta-button">
             </div>
             <div class="widget test-widget">
-                <!-- TODO finish test layout -->
                 <div class="question-container">
                     <ol class="questions-list">
                         <h2 class="test-class">Ασφάλεια Πληροφοριακών Συστημάτων</h2>
@@ -64,39 +63,75 @@
                         <li class="question-item">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Praesent a iaculis risus. Integer et hendrerit.
-                            Lorem ipsum dolor sit amet. 
-                            <!-- <ol class="answers-list">
-                                <li class="answer-item">
-                                    <label class="answer-container">
-                                        <input type="radio" name="question1" id="">
-                                        Lorem ipsum dolor sit amet.
-                                    </label>
-                                </li>
-                                <div>
+                            Lorem ipsum dolor sit amet.
+                            <ol class="answers-list">
+                                <div class="answers-listgroup">
                                     <li class="answer-item">
                                         <label class="answer-container">
-                                            <input type="radio" name="question1" id="">
+                                            <input type="radio" name="question1">
+                                            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                                        </label>
+                                    </li>
+                                    <li class="answer-item">
+                                        <label class="answer-container">
+                                            <input type="radio" name="question1">
                                             Lorem ipsum dolor sit amet.
                                         </label>
                                     </li>
                                 </div>
-                                <div>
+                                <div class="answers-listgroup">
                                     <li class="answer-item">
                                         <label class="answer-container">
-                                            <input type="radio" name="question1" id="">
+                                            <input type="radio" name="question1">
                                             Lorem ipsum dolor sit amet.
                                         </label>
                                     </li>
                                     <li class="answer-item">
                                         <label class="answer-container">
-                                            <input type="radio" name="question1" id="">
+                                            <input type="radio" name="question1">
+                                            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                                        </label>
+                                    </li>
+                                </div>
+                            </ol>  
+                        </li>
+                        <li class="question-item">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Praesent a iaculis risus. Integer et hendrerit.
+                            Lorem ipsum dolor sit amet.
+                            <ol class="answers-list">
+                                <div class="answers-listgroup">
+                                    <li class="answer-item">
+                                        <label class="answer-container">
+                                            <input type="radio" name="question1">
+                                            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                                        </label>
+                                    </li>
+                                    <li class="answer-item">
+                                        <label class="answer-container">
+                                            <input type="radio" name="question1">
                                             Lorem ipsum dolor sit amet.
                                         </label>
                                     </li>
                                 </div>
-                            </ol> -->
+                                <div class="answers-listgroup">
+                                    <li class="answer-item">
+                                        <label class="answer-container">
+                                            <input type="radio" name="question1">
+                                            Lorem ipsum dolor sit amet.
+                                        </label>
+                                    </li>
+                                    <li class="answer-item">
+                                        <label class="answer-container">
+                                            <input type="radio" name="question1">
+                                            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+                                        </label>
+                                    </li>
+                                </div>
+                            </ol>  
                         </li>
                     </ol>
+                    <input type="submit" class="submit-test-btn" value="Αποστολή">
                 </div>
             </div>
         </div>

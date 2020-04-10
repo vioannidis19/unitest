@@ -38,8 +38,9 @@
         </div>
     </div>
     <div class="login-logout">
-        <a href="#">Σύνδεση/Εγγραφή</a>
         <!-- TODO PHP to toggle between login or logout link -->
+        <a href="login.php">Σύνδεση</a>
+        <a href="register.php">Εγγραφή</a>
         <i class="fas fa-sign-out-alt"></i>
     </div>
 </div>
