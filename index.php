@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="vendors/font-awesome/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>Αρχική Σελίδα - UniTest</title>
 </head>
 <body>
     <div class="container">

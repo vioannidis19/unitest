@@ -93,3 +93,49 @@
     cursor: pointer;
 }
 
+.main-section .test-creation-widget {
+    margin: 20px 0;
+    width: 80%;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.test-creation-widget .test-creation-title {
+    font-size: 1.3em;
+}
+
+.test-creation-widget .test-creation-settings {
+    text-align: left;
+    color: var(--gray);
+}
+
+.test-creation-settings input[type="text"] {
+    border-radius: 10px;
+    border: 1px solid var(--light-gray);
+    padding: 2px;
+}
+
+.test-creation-settings input[type="text"]:focus {
+    border: 1px solid var(--gray);
+    transition: border .3s;
+}
+
+.test-creation-widget .add-question-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    bottom: 20px;
+    color: var(--light-blue);
+    font-size: 1.5em;
+    border: 3px solid var(--light-blue);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.test-creation-widget .add-question-icon .fas {
+    padding: 5px;
+    margin-top: -2px;
+}
+
+

@@ -30,11 +30,12 @@
             </li>
         </ul>
     </div>
-    <div class="user-info">
+    <div class="user-info user-info-active">
         <!-- TODO PHP to show user info if logged in -->
+        <!-- TODO JS to toggle CSS class if user on profile page -->
         <div class="user-icon"></div>
         <div class="user-name">
-            <a href="#">Ευθύμιος Κελέσμητος</a>
+            <a href="profile.php">Ευθύμιος Κελέσμητος</a>
         </div>
     </div>
     <div class="login-logout">

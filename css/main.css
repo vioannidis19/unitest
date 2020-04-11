@@ -77,10 +77,17 @@ ul {
  }
 
  .user-info {
-     width: 100%;
      position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
      bottom: 85px;
      text-align: center;
+     padding: 10px 30px;
+ }
+
+ .user-info-active {
+    background-color: var(--light-gray);
+    border-radius: 10px;
  }
 
  .user-icon {
@@ -94,6 +101,8 @@ ul {
  .user-name {
      color: var(--gray);
  }
+
+
 
  .login-logout {
     width: 100%;
@@ -140,4 +149,71 @@ ul {
     height: 300px;
     margin: 30px;
     align-self: flex-end;
+}
+
+ /**************************************************/
+ /****************** PROFILE ***********************/
+ /**************************************************/
+
+.main-section .row {
+    position: relative;
+    height: 30px;
+    padding: 20px;
+}
+
+ .profile-settings {
+    position: absolute;
+    right: 10px;
+    font-size: 1.1em;
+ }
+
+ .profile-settings a {
+    color: var(--light-blue);
+ }
+
+ .profile-settings::after {
+     clear: right;
+ }
+
+.main-section .profile-container {
+    margin-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.user-info-widget {
+    flex: 80%;
+    margin: 20px 10px;
+    padding: 43px 30px;
+    text-align: left;
+    color: var(--light-blue);
+}
+
+.user-info-widget .user-info-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.4em;
+}
+
+.user-info-widget .info-subtitle {
+    color: var(--gray);
+    margin-right: 10px;
+}
+
+.user-grades-widget {
+    flex: 20%;
+    margin-top: 20px;
+    padding: 10px 60px;
+    height: 200px;
+}
+
+.user-grades-title {
+    margin-top: 0;
+    font-size: .9em;
+}
+
+.something-widget {
+    align-self: flex-end;
+    width: 80%;
+    height: 40vh;
 }
