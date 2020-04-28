@@ -1,5 +1,5 @@
 <?php
-//TODO PHP for user registration
+    require 'internal/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +17,11 @@
         </div>
         <div class="form-container">
             <h2>Εγγραφή</h2>
-            <form action="">
-                <!-- TODO Add correct input fields for registration -->
-                <input type="text" placeholder="Όνομα Χρήστη">
-                <input type="password" placeholder="Κωδικός">
-                <input type="submit" value="Εγγραφή">
+            <form method="post">
+                <input type="text" name="username" placeholder="Όνομα Χρήστη">
+                <input type="password" name="password" placeholder="Κωδικός">
+                <input type="email" name="email" placeholder="Email">
+                <input type="submit" name="register" value="Εγγραφή">
             </form>
         </div>
     </div>

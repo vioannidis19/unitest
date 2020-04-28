@@ -1,5 +1,5 @@
 <?php
-// TODO PHP for credential check
+    require 'internal/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +17,10 @@
         </div>
         <div class="form-container">
             <h2>Σύνδεση</h2>
-            <form action="">
-                <input type="text" placeholder="Όνομα Χρήστη">
-                <input type="password" placeholder="Κωδικός">
-                <input type="submit" value="Σύνδεση">
+            <form method="post">
+                <input type="text" name="username" placeholder="Όνομα Χρήστη">
+                <input type="password" name="password" placeholder="Κωδικός">
+                <input type="submit" name="login" value="Σύνδεση">
             </form>
         </div>
     </div>

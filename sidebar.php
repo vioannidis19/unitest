@@ -1,9 +1,6 @@
-<?php
-
-?>
 <div class="sidebar">
     <div class="logo">
-        <a href="#">
+        <a href="index.php">
             <img src="img/logo.png" alt="">
         </a>
     </div>
@@ -11,7 +8,7 @@
         <ul class="navlist">
             <!-- TODO PHP to change CSS class for active page effect -->
             <li class="nav-item item-active">
-                <a href="#">
+                <a href="index.php">
                     <i class="fas fa-home"></i>
                     Αρχική Σελίδα
                 </a>
@@ -30,18 +27,37 @@
             </li>
         </ul>
     </div>
-    <div class="user-info user-info-active">
-        <!-- TODO PHP to show user info if logged in -->
+    <?php
+        if(isset($_SESSION['id'])) {
+            echo '<div class="user-info">';
+        } else {
+            echo '<div style="display:none">';
+        }
+    ?>
+        <!-- TODO PHP to show user profile picture if logged in -->
         <!-- TODO JS to toggle CSS class if user on profile page -->
         <div class="user-icon"></div>
         <div class="user-name">
-            <a href="profile.php">Ευθύμιος Κελέσμητος</a>
+            <a href="profile.php">
+                <?php
+                    if(isset($_SESSION['id'])){
+                        $result = getUserInfo();
+                        echo $result['name'] . ' ' . $result['surname'];
+                    }
+                ?>
+            </a>
         </div>
     </div>
     <div class="login-logout">
-        <!-- TODO PHP to toggle between login or logout link -->
-        <a href="login.php">Σύνδεση</a>
-        <a href="register.php">Εγγραφή</a>
-        <i class="fas fa-sign-out-alt"></i>
+        <?php
+            if(isset($_SESSION['id'])) {
+                echo '<a href="logout.php">' .
+                    '<i class="fas fa-sign-out-alt"></i>' .  
+                    'Αποσύνδεση</a>';
+            } else {
+                echo '<a href="login.php">Σύνδεση</a>' .
+                    '<a href="register.php">Εγγραφή</a>';
+            }
+        ?>
     </div>
 </div>

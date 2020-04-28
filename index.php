@@ -1,3 +1,6 @@
+<?php
+    require 'internal/database.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
