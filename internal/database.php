@@ -70,6 +70,15 @@
         $result = mysqli_fetch_assoc($stmt->get_result());
         return $result;
     }
+
+    function saveSettings() {
+        $_SESSION["class-select"] = $_POST["class-select"];
+        $_SESSION["test-title"] = $_POST["test-title"];
+        $_SESSION["questions-quantity"] = $_POST["questions-quantity"];
+        $_SESSION["answer-quantity"] = $_POST["answer-quantity"];
+
+        header('Location: create.php');
+    }
 ?>
 
 <?php
@@ -80,5 +89,9 @@
 
     if (isset($_POST['login'])) {
         login();
+    }
+
+    if (isset($_POST['save-settings'])) {
+        saveSettings();
     }
 ?>

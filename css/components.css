@@ -56,6 +56,11 @@
 
 /*********** TEST ***********/
 
+.test-widget {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .question-container {
     color: var(--gray);
     width: 85%;
@@ -100,6 +105,10 @@
     padding-bottom: 60px;
 }
 
+.test-creation-widget .hide {
+    display: none;
+}
+
 .test-creation-widget .test-creation-title {
     font-size: 1.3em;
 }
@@ -109,15 +118,28 @@
     color: var(--gray);
 }
 
+.test-creation-widget .test-creation-settings .row {
+    padding: 10px 20px;
+}
+
 .test-creation-settings input[type="text"] {
     border-radius: 10px;
     border: 1px solid var(--light-gray);
     padding: 2px;
+    width: 300px;
 }
 
 .test-creation-settings input[type="text"]:focus {
-    border: 1px solid var(--gray);
+    border: 1px solid var(--light-blue);
     transition: border .3s;
+}
+
+.test-creation-settings input[type="number"] {
+    width: 40px;
+}
+
+.test-creation-settings .cta-button {
+    margin: 0 auto;
 }
 
 .test-creation-widget .add-question-icon {
@@ -138,4 +160,29 @@
     margin-top: -2px;
 }
 
+.test-creation-widget .question-field div {
+    text-align: left;
+    margin: 10px 0;
+}
 
+.test-creation-widget .question-field input {
+    border: 1px solid var(--light-gray);
+    border-radius: 20px;
+    height: 20px;
+}
+
+/*********** CREATE ***********/
+
+.test-creation-widget .question-creation-container {
+    margin: 10px;
+}
+
+
+.test-creation-widget .answers-creation-container input {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.test-creation-widget .answers-creation-container:first-child {
+    margin-top: 20px;
+}

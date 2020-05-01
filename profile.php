@@ -55,7 +55,7 @@
                     <img src="https://via.placeholder.com/120.png" alt="">
                 </div>
             </div>
-            <!-- TODO Brainstorm and add a third widget -->
+            
             <div class="widget something-widget">
                     
             </div>
