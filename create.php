@@ -1,5 +1,6 @@
 <?php
     require 'internal/database.php';
+    
 ?>
 
 <!DOCTYPE html>
@@ -23,17 +24,17 @@
                 <h2 class="test-creation-title">Δημιουργία Διαγωνίσματος</h2>
                 <div class="test-creation-settings">
                     <?php
-                        if(isset($_SESSION["class-select"])) {
+                        if(isset($_SESSION["test-creation"])) {
                             echo '<div class="question-creation-container">
                             <form method="post">';
                             for ($i=0; $i < $_SESSION["questions-quantity"]; $i++) { 
                                 echo '<div>
-                                <input type="text" class="question-field" placeholder="Ερώτηση ' . ($i+1) . '">';
+                                <input type="text" class="question-field" placeholder="Ερώτηση ' . ($i+1) . '" name="question[]">';
                                 for ($y=0; $y < $_SESSION["answer-quantity"]; $y++) {
                                     echo '<div class="answers-creation-container">';
-                                    echo '<input type="text" placeholder="Απάντηση ' . ($y+1) . '" class="answer-item" >';
+                                    echo '<input type="text" placeholder="Απάντηση ' . ($y+1) . '" class="answer-item" name="answer[]">';
                                     echo '<label for="correct-answer">Σωστή Απάντηση: </label>
-                                    <input type="checkbox" name="correct-answer"></div>';
+                                    <input type="checkbox" name="correct-answer[]" value="' . $y . '"></div>';
                                 }
                                 echo '</div>';
                             }
@@ -44,12 +45,10 @@
                                 <form method="post">
                                     <div class="row">
                                         <label for="class-select">Μάθημα:
-                                            <select name="class-select" class="class-select" id="class-select">
-                                                <!-- TODO PHP to add classes provided by teacher -->
-                                                <option value="1">Ασφάλεια Πληροφοριακών Συστημάτων</option>
-                                                <option value="2">Προστιθέμενη Αξία</option>
-                                            </select>
-                                        </label>
+                                            <select name="class-select" class="class-select" id="class-select">';
+                            getClasses(); 
+                            echo            '</select>';
+                            echo            '</label>
                                     </div>
                                     <div class="row">
                                         <label for="test-title">Τίτλος Διαγωνίσματος: </label>

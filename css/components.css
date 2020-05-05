@@ -53,6 +53,16 @@
     font-weight: 600;
 }
 
+.secondary-button {
+    background-color: var(--light-gray);
+    color: var(--light-blue);
+    border: 0;
+    border-radius: 10px;
+    padding: 5px 35px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
 
 /*********** TEST ***********/
 

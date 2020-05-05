@@ -72,12 +72,66 @@
     }
 
     function saveSettings() {
-        $_SESSION["class-select"] = $_POST["class-select"];
-        $_SESSION["test-title"] = $_POST["test-title"];
-        $_SESSION["questions-quantity"] = $_POST["questions-quantity"];
-        $_SESSION["answer-quantity"] = $_POST["answer-quantity"];
+        $conn = dbconnect();
 
+        $stmt = $conn->prepare("INSERT INTO tests (teacherId, classId, title, noQuestions, noAnswers) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $_SESSION['id'], $class, $title, $noQuestions, $noAnswers);
+
+        $class = $_POST['class-select'];
+        $title = $_POST['test-title'];
+        $noQuestions = $_POST['questions-quantity'];
+        $noAnswers = $_POST['answer-quantity'];
+
+        $stmt->execute();
+        $_SESSION['test-creation'] = $class;
+        $_SESSION['questions-quantity'] = $noQuestions;
+        $_SESSION['answer-quantity'] = $noAnswers;
         header('Location: create.php');
+    }
+
+    function saveTest() {
+        $conn = dbconnect();
+        $testIdstmt = $conn->prepare("SELECT MAX(id) from tests WHERE teacherId=?");
+        $testIdstmt->bind_param("s", $_SESSION['id']);
+        $testIdstmt->execute();
+        $testId = mysqli_fetch_assoc($testIdstmt->get_result());
+        $_SESSION['test-id'] = implode($testId);
+        $questions = $_POST['question'];
+        //$answers = $_POST['answer'];
+        //$correct = $_POST['correct-answer'];
+        foreach ($questions as $question) {
+            echo var_dump($_SESSION['test-id']);
+            print_r($question);
+            $stmt = $conn->prepare("INSERT INTO questions (testId, questionText) VALUES (?, ?)");
+            $stmt->bind_param("ss", $_SESSION['test-id'], $question);
+            $stmt->execute();
+            $questionIdstmt = $conn->prepare("SELECT MAX(id) from tests WHERE testId=?");
+            $questionIdstmt->bind_param("s", $_SESSION['test-id']);
+            $questionIdstmt->execute();
+            $questionId = implode(mysqli_fetch_assoc($testIdstmt->get_result()));
+            foreach ($answers as $key=>$answer) {
+                echo var_dump($questionId);
+            }
+
+        }
+        // $qStmt = $conn->prepare("INSERT INTO questions (")
+    }
+
+    function getClasses() {
+        $conn = dbconnect();
+
+        $stmt = $conn->prepare("SELECT id, classText FROM classes WHERE teacherId=?");
+        $stmt->bind_param("s", $id);
+
+        $id = $_SESSION['id'];
+
+        $stmt->execute();
+        $stmt->bind_result($classId, $classText);
+        $classes = array();
+        while ($stmt->fetch()) {
+            echo '<option value="' . $classId . '">' . $classText . '</option>';
+        }
+        return $classes;
     }
 ?>
 
@@ -93,5 +147,9 @@
 
     if (isset($_POST['save-settings'])) {
         saveSettings();
+    }
+
+    if (isset($_POST['save-test'])) {
+        saveTest();
     }
 ?>
