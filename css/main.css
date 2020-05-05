@@ -228,7 +228,7 @@ ul {
 .main-section .contact-widget{
     margin-top: 100px;
     width: 700px;
-    margin: 30px;
+    margin: 200px;
 }
 
 .main-section .contact-widget .fields .input-field {
@@ -236,30 +236,12 @@ ul {
     margin-left: 10px;
 }
 
-/* .main-section .field-half1{
-    position: relative;
-    margin-left: 140px;
-    margin-right: 400px;
-    top: 40px;
-    border:2px solid var(--light-blue);
-    border-radius: 10px;
-}
-
-.main-section .field-half2{
-    position: relative;
-    margin-left: 400px;
-    margin-right: 120px;
-    top: 5px;
-    border:2px solid var(--light-blue);
-    border-radius: 10px;
-} */
-
 .contact-widget form input[type="text"]{
-    border: 2px solid var(--light-gray);
+    border: 2px solid var(--gray);
     border-radius: 30px;
     height: 2em;
     padding-left: 5px;
-    color: var(--gray);  
+    color: var(--darkgray);  
 } 
 
 .contact-widget form input[type="text"]:focus {
@@ -280,7 +262,7 @@ ul {
 .contact-widget .fields .field textarea{
     color: var(--gray);
     border-radius: 20px;
-    border: 2px solid var(--light-gray);
+    border: 2px solid var(--gray);
     padding: 7px;
     margin: 10px 0;
 }
@@ -288,4 +270,15 @@ ul {
 .contact-widget .fields .field textarea:focus {
     border: 2px solid var(--light-blue);
     transition: border .5s;
+}
+
+.contact-widget .fields input[type="reset"]{
+    margin-bottom: 20px;
+}
+.contact-widget .fields input[type="reset"]:hover {
+    background-color:lightgrey;
+}
+
+.contact-widget .fields input[type="submit"]:hover {
+    background-color: lightseagreen;
 }

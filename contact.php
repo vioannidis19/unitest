@@ -25,6 +25,7 @@
                         <!--TODO fix method sending email-->
                         <form method="post">
                             <div class="fields">
+                                <!--Maybe subject and email of receiver-->
                                 <div class="input-field">
                                     <input type="text" name="name" id="name" placeholder="Όνομα"/>
                                 </div>
@@ -35,11 +36,8 @@
                                     <label for="message">Μήνυμα</label><br>
                                     <textarea name="message" id="message" rows="7" cols="50"  ></textarea>
                                 </div>
-                            <!-- Θα μπορούσε και να μην υπάρχει η λίστα, αν θες κράτα την -->
-                                <ul class="actions">
-                                    <li><input type="submit" value="Στείλε μήνυμα" class="cta-button" ></li>
-                                    <li><input type="reset" value="Καθαρισμός" class="secondary-button"></li>
-                                </ul>
+                                    <input type="submit" value="Στείλε μήνυμα" class="cta-button" >
+                                    <input type="reset" value="Καθαρισμός" class="secondary-button">
                             </div>
                         </form>
                 </div> 
