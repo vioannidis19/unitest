@@ -30,6 +30,11 @@ h5 {
     margin: 0;
 }
 
+h1 {
+    color: var(--light-blue);
+    margin: 0;
+}
+
 
 
 /************ SIDEBAR ***********/

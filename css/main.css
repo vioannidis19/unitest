@@ -218,3 +218,50 @@ ul {
     width: 80%;
     height: 40vh;
 }
+
+
+ /**************************************************/
+ /****************** CONTACT ***********************/
+ /**************************************************/
+
+
+.main-section .contact-widget{
+    margin-top: 100px;
+    width: 700px;
+    height: 400px;
+    margin: 30px;
+    text-align: center;
+}
+
+.main-section .field-half1{
+    position: relative;
+    margin-left: 140px;
+    margin-right: 400px;
+    top: 40px;
+    border:2px solid var(--light-blue);
+    border-radius: 10px;
+}
+
+.main-section .field-half2{
+    position: relative;
+    margin-left: 400px;
+    margin-right: 120px;
+    top: 5px;
+    border:2px solid var(--light-blue);
+    border-radius: 10px;
+}
+
+.widget-title form input, .widget-title form input[type="text"]{
+    border: 1px;
+    border-radius: 10px;
+    height: 2em;
+    padding-left: 5px;
+    color: var(--gray);  
+}
+
+.main-section .field{
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    
+}
