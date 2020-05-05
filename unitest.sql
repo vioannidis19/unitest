@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2020 at 09:40 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: May 05, 2020 at 09:10 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `answers` (
-  `id` int(16) NOT NULL,
-  `questionId` int(16) NOT NULL,
-  `answer` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `questionId` int(11) NOT NULL,
+  `answerText` varchar(200) NOT NULL,
   `isCorrect` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,22 +41,30 @@ CREATE TABLE `answers` (
 --
 
 CREATE TABLE `classes` (
-  `id` int(16) NOT NULL,
-  `teacherId` int(16) NOT NULL,
-  `class` text NOT NULL
+  `id` int(11) NOT NULL,
+  `teacherId` int(11) NOT NULL,
+  `classText` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `classes`
+--
+
+INSERT INTO `classes` (`id`, `teacherId`, `classText`) VALUES
+(1, 2, 'Ασφάλεια Πληροφοριακών Συστημάτων'),
+(2, 2, 'Προστιθέμενη Αξία');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Table structure for table `grades`
 --
 
-CREATE TABLE `messages` (
-  `id` int(16) NOT NULL,
-  `senderId` int(16) NOT NULL,
-  `recipientId` int(16) NOT NULL,
-  `message` text NOT NULL
+CREATE TABLE `grades` (
+  `id` int(11) NOT NULL,
+  `studentId` int(11) NOT NULL,
+  `testId` int(11) NOT NULL,
+  `grade` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -67,10 +74,19 @@ CREATE TABLE `messages` (
 --
 
 CREATE TABLE `questions` (
-  `id` int(16) NOT NULL,
-  `testId` int(16) NOT NULL,
-  `question` text NOT NULL
+  `id` int(11) NOT NULL,
+  `testId` int(11) NOT NULL,
+  `questionText` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`id`, `testId`, `questionText`) VALUES
+(1, 4, 'aaaa'),
+(2, 4, 'aaaaa'),
+(3, 4, '');
 
 -- --------------------------------------------------------
 
@@ -79,9 +95,24 @@ CREATE TABLE `questions` (
 --
 
 CREATE TABLE `tests` (
-  `id` int(32) NOT NULL,
-  `teacherId` int(32) NOT NULL
+  `id` int(11) NOT NULL,
+  `teacherId` int(100) NOT NULL,
+  `classId` int(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `noQuestions` int(100) NOT NULL,
+  `noAnswers` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tests`
+--
+
+INSERT INTO `tests` (`id`, `teacherId`, `classId`, `title`, `noQuestions`, `noAnswers`) VALUES
+(1, 2, 1, 'aaaa', 4, 2),
+(2, 2, 2, 'sssss', 6, 2),
+(3, 2, 1, 'aaaa', 4, 4),
+(4, 2, 2, 'aaa', 2, 2),
+(5, 2, 2, 'aaaa', 10, 4);
 
 -- --------------------------------------------------------
 
@@ -90,23 +121,22 @@ CREATE TABLE `tests` (
 --
 
 CREATE TABLE `users` (
-  `id` int(16) NOT NULL,
-  `userName` varchar(32) NOT NULL,
-  `firstName` varchar(32) NOT NULL,
-  `lastName` varchar(32) NOT NULL,
-  `am` int(6) DEFAULT NULL,
-  `isTeacher` tinyint(1) NOT NULL,
-  `isAdmin` tinyint(1) NOT NULL
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `surname` varchar(100) DEFAULT NULL,
+  `study` varchar(100) DEFAULT NULL,
+  `isTeacher` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `userName`, `firstName`, `lastName`, `am`, `isTeacher`, `isAdmin`) VALUES
-(1, 'admin', 'Vasileios', 'Ioannidis', NULL, 0, 1),
-(2, 'asdre@it.teithe.gr', 'Aikaterini', 'Asdre', NULL, 1, 0),
-(3, 'it154453@it.teithe.gr', 'Vasileios', 'Ioannidis', 154453, 0, 0);
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `name`, `surname`, `study`, `isTeacher`) VALUES
+(2, 'vasal', 'vasilis.ioannidis4@gmail.com', '$2y$10$CM7zBGA8/1SiKbvfi16V5eEaNSgJtSBqGxRbsXvdGlhEqEcatHS72', 'Βασίλης', 'Ιωαννίδης', 'Μηχανικών Πληροφορικής', 0);
 
 --
 -- Indexes for dumped tables
@@ -127,12 +157,12 @@ ALTER TABLE `classes`
   ADD KEY `teacherId` (`teacherId`);
 
 --
--- Indexes for table `messages`
+-- Indexes for table `grades`
 --
-ALTER TABLE `messages`
+ALTER TABLE `grades`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `recipientId` (`recipientId`),
-  ADD KEY `senderId` (`senderId`);
+  ADD KEY `studentId` (`studentId`),
+  ADD KEY `testId` (`testId`);
 
 --
 -- Indexes for table `questions`
@@ -146,7 +176,8 @@ ALTER TABLE `questions`
 --
 ALTER TABLE `tests`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `test_ibfk_1` (`teacherId`);
+  ADD KEY `teacherId` (`teacherId`),
+  ADD KEY `classId` (`classId`);
 
 --
 -- Indexes for table `users`
@@ -162,37 +193,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `classes`
 --
 ALTER TABLE `classes`
-  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `messages`
+-- AUTO_INCREMENT for table `grades`
 --
-ALTER TABLE `messages`
-  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `grades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tests`
 --
 ALTER TABLE `tests`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -211,11 +242,11 @@ ALTER TABLE `classes`
   ADD CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`teacherId`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `messages`
+-- Constraints for table `grades`
 --
-ALTER TABLE `messages`
-  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`recipientId`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `messages_ibfk_2` FOREIGN KEY (`senderId`) REFERENCES `users` (`id`);
+ALTER TABLE `grades`
+  ADD CONSTRAINT `grades_ibfk_1` FOREIGN KEY (`studentId`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `grades_ibfk_2` FOREIGN KEY (`testId`) REFERENCES `tests` (`id`);
 
 --
 -- Constraints for table `questions`
@@ -227,7 +258,8 @@ ALTER TABLE `questions`
 -- Constraints for table `tests`
 --
 ALTER TABLE `tests`
-  ADD CONSTRAINT `tests_ibfk_1` FOREIGN KEY (`teacherId`) REFERENCES `classes` (`id`);
+  ADD CONSTRAINT `tests_ibfk_1` FOREIGN KEY (`teacherId`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `tests_ibfk_2` FOREIGN KEY (`classId`) REFERENCES `classes` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
