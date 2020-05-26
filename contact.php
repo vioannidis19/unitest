@@ -25,19 +25,18 @@
                         <!--TODO fix method sending email-->
                         <form method="post">
                             <div class="fields">
-                                <!--Maybe subject and email of receiver-->
                                 <div class="input-field">
-                                    <input type="text" name="name" id="name" placeholder="Όνομα"/>
+                                    <input type="text" name="emailA" id="emailA" placeholder="Email Φοιτητή"/>
                                 </div>
                                 <div class="input-field">                                    
-                                    <input type="text" name="email" id="email" placeholder="Email"/>
+                                    <input type="text" name="emailB" id="emailB" placeholder="Email Καθηγητή"/>
                                 </div>
                                 <div class="field">
                                     <label for="message">Μήνυμα</label><br>
                                     <textarea name="message" id="message" rows="7" cols="50"  ></textarea>
                                 </div>
-                                    <input type="submit" value="Στείλε μήνυμα" class="cta-button" >
-                                    <input type="reset" value="Καθαρισμός" class="secondary-button">
+                                    <input type="submit" name="send" id="send" value="Στείλε μήνυμα" class="cta-button" >
+                                    <input type="reset" name="reset" id="reset" value="Καθαρισμός" class="secondary-button">
                             </div>
                         </form>
                 </div> 

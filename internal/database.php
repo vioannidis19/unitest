@@ -133,6 +133,40 @@
         }
         return $classes;
     }
+
+    function sendEmail(){
+        if(isset($_POST['send'])){
+            //Check for blank fields
+            if($_POST["emailA"]==""||$_POST["emailB"]==""||$_POST["message"]==""){
+                alert("Συμπλήρωσε όλα τα πεδία!");
+            }else {
+            //Check for the Sender email,sanitize and validate
+                $email = $_POST['emailA'];
+                $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+                $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+                if (!$email){
+                    alert("Λάθος email Αποστολέα");
+                } else {
+                    $subject = $_POST["Unitest"];
+                    $message = $_POST['message'];
+                    $message = wordwrap($message, 70);
+                    $headers = "From: $email \r\n";
+                    $to = $_POST['emailB'];
+                    $success = mail($to, $subject, $message, $headers);
+                    if(!$success) {
+                        $errorMessage = error_get_last()['message'];
+                    } else{
+                        alert("Το email στάλθηκε με επιτυχία!");
+                    }
+                
+                }
+            }
+        }
+    }
+
+    function alert($mnm){
+        echo "<script type='text/javascript'>alert('$mnm');</script>";
+    }
 ?>
 
 <?php
@@ -151,5 +185,9 @@
 
     if (isset($_POST['save-test'])) {
         saveTest();
+    }
+
+    if (isset($_POST['send'])) {
+        sendEmail();
     }
 ?>

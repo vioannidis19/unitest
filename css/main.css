@@ -275,10 +275,13 @@ ul {
 .contact-widget .fields input[type="reset"]{
     margin-bottom: 20px;
 }
+.contact-widget .fields input[type="send"]{
+    margin-left: 30px;
+}
 .contact-widget .fields input[type="reset"]:hover {
     background-color:lightgrey;
 }
 
-.contact-widget .fields input[type="submit"]:hover {
+.contact-widget .fields input[type="send"]:hover {
     background-color: lightseagreen;
 }
