@@ -219,6 +219,19 @@ ul {
     height: 40vh;
 }
 
+ /**************************************************/
+ /******************* TESTS ************************/
+ /**************************************************/
+
+.main-section .tests-widget {
+    width: 700px;
+    margin-top: 50px;
+    
+}
+
+.tests-widget .test h4{
+    color: var(--light-blue);
+}
 
  /**************************************************/
  /****************** CONTACT ***********************/
@@ -275,13 +288,10 @@ ul {
 .contact-widget .fields input[type="reset"]{
     margin-bottom: 20px;
 }
-.contact-widget .fields input[type="send"]{
-    margin-left: 30px;
-}
 .contact-widget .fields input[type="reset"]:hover {
     background-color:lightgrey;
 }
 
-.contact-widget .fields input[type="send"]:hover {
+.contact-widget .fields input[type="submit"]:hover {
     background-color: lightseagreen;
 }

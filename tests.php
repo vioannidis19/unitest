@@ -16,7 +16,21 @@
         <div class="main-section">
             <div class="widget-container">
                 <div class="widget tests-widget">
-                    
+                    <div class="test">
+                        <a href="test.php">
+                        <h4>Διαγώνισμα Εξάσκησης 1</h4>
+                        </a>
+                    </div>
+                    <div class="test">
+                        <a href="test.php">
+                        <h4>Διαγώνισμα Εξάσκησης 2</h4>
+                        </a>
+                    </div>
+                    <div class="test">
+                        <a href="test.php">
+                        <h4>Διαγώνισμα Εξάσκησης 3</h4>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

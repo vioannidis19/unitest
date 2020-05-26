@@ -24,8 +24,11 @@
                 </div>
             </div>
             <div class="widget test-info-widget"></div>
-            </div>        
-            <div class="widget latest-grades-widget">
+            </div>
+            <?php
+                if(isset($_SESSION['id'])) {
+                    echo '
+                    <div class="widget latest-grades-widget">
                 <div class="widget-title">
                     <h5>Ιστορικό Βαθμολογιών</h5>
                 </div>
@@ -58,85 +61,9 @@
                 </table>
                 <input type="button" value="Περισσότερα" class="cta-button">
             </div>
-            <div class="widget test-widget">
-                <div class="question-container">
-                    <ol class="questions-list">
-                        <h2 class="test-class">Ασφάλεια Πληροφοριακών Συστημάτων</h2>
-                        <h4 class="test-subtitle">Διαγώνισμα Εξάσκσης - Κεφάλαια 1-2</h4>
-                        <li class="question-item">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Praesent a iaculis risus. Integer et hendrerit.
-                            Lorem ipsum dolor sit amet.
-                            <ol class="answers-list">
-                                <div class="answers-listgroup">
-                                    <li class="answer-item">
-                                        <label class="answer-container">
-                                            <input type="radio" name="question1">
-                                            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                                        </label>
-                                    </li>
-                                    <li class="answer-item">
-                                        <label class="answer-container">
-                                            <input type="radio" name="question1">
-                                            Lorem ipsum dolor sit amet.
-                                        </label>
-                                    </li>
-                                </div>
-                                <div class="answers-listgroup">
-                                    <li class="answer-item">
-                                        <label class="answer-container">
-                                            <input type="radio" name="question1">
-                                            Lorem ipsum dolor sit amet.
-                                        </label>
-                                    </li>
-                                    <li class="answer-item">
-                                        <label class="answer-container">
-                                            <input type="radio" name="question1">
-                                            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                                        </label>
-                                    </li>
-                                </div>
-                            </ol>  
-                        </li>
-                        <li class="question-item">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Praesent a iaculis risus. Integer et hendrerit.
-                            Lorem ipsum dolor sit amet.
-                            <ol class="answers-list">
-                                <div class="answers-listgroup">
-                                    <li class="answer-item">
-                                        <label class="answer-container">
-                                            <input type="radio" name="question1">
-                                            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                                        </label>
-                                    </li>
-                                    <li class="answer-item">
-                                        <label class="answer-container">
-                                            <input type="radio" name="question1">
-                                            Lorem ipsum dolor sit amet.
-                                        </label>
-                                    </li>
-                                </div>
-                                <div class="answers-listgroup">
-                                    <li class="answer-item">
-                                        <label class="answer-container">
-                                            <input type="radio" name="question1">
-                                            Lorem ipsum dolor sit amet.
-                                        </label>
-                                    </li>
-                                    <li class="answer-item">
-                                        <label class="answer-container">
-                                            <input type="radio" name="question1">
-                                            Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
-                                        </label>
-                                    </li>
-                                </div>
-                            </ol>  
-                        </li>
-                    </ol>
-                    <input type="submit" class="submit-test-btn" value="Αποστολή">
-                </div>
-            </div>
+                    ';
+                }
+            ?>
         </div>
     </div>
 </body>
