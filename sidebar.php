@@ -14,13 +14,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="tests.php">
                     <i class="fas fa-pencil-alt"></i>
                     Διαγωνίσματα
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="contact.php">
                     <i class="fas fa-envelope"></i>
                     Επικοινωνία
                 </a>

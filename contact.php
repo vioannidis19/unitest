@@ -17,7 +17,7 @@
             require 'sidebar.php'
          ?>
         <div class="main-section">
-            <div class="widget-conatiner">
+            <div class="widget-conatiner contact-container">
                 <div class="widget contact-widget">
                     <div class="widget-title">
                         <h1>Επικοινωνία</h1>
